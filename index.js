@@ -42,7 +42,7 @@ function buildTarget() {
   const timeToLoose = window.setTimeout(()=> {
     refreshTarget(targetTime, false, target)
   }, timeToLooseTime)
-  target.addEventListener('click', ()=> {
+  target.addEventListener('mousedown', ()=> {
     window.clearTimeout(timeToLoose)
     refreshTarget(targetTime, true, target)
   })
