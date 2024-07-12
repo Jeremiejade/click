@@ -1,0 +1,78 @@
+:root {
+  --target-size: 40px;
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #000;
+  height: 50px;
+  width: 100vw;
+  z-index: 1;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.start {
+  border: none;
+  cursor: pointer;
+  aspect-ratio: 1;
+  margin: 4px;
+}
+
+.moving {
+  position: relative;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.moving_label {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.moving ~ div {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: white 2px solid;
+}
+
+.moving:checked ~ div {
+  background: green;
+  border-color: #43ff1a;
+}
+
+.content {
+  height: 100vh;
+  width: 100%;
+  background: #34435d;
+  position: relative;
+  overflow: hidden;
+}
+
+.target {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(red 0, white 10%,red 20%, white 30%,red 40%, white 50%,red 60%, white 70%,red 80%, white 90%,red 100%);
+  width: var(--target-size);
+  height: var(--target-size);
+  cursor: pointer;
+  z-index: 100;
+  border: none;
+  transition: all 2s ease;
+}
+
+.hide {
+  display: none;
+}
